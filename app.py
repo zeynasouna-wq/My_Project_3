@@ -250,64 +250,64 @@ elif page == "📊 Dashboard (WebScraper nettoyé)":
 
             st.divider()
 
-        # ==================================================
-        # KPI CARD
-        # ==================================================
-        def kpi(title, value, color="#00d4ff"):
-            st.markdown(
-                f"""
-                <div style="
-                    background-color:#0e1117;
-                    padding:20px;
-                    border-radius:14px;
-                    border:1px solid #262730;
-                    text-align:center;
-                    min-height:110px;
-                ">
-                    <div style="color:{color}; font-size:14px; margin-bottom:8px;">
-                        {title}
+            # ==================================================
+            # KPI CARD
+            # ==================================================
+            def kpi(title, value, color="#00d4ff"):
+                st.markdown(
+                    f"""
+                    <div style="
+                        background-color:#0e1117;
+                        padding:20px;
+                        border-radius:14px;
+                        border:1px solid #262730;
+                        text-align:center;
+                        min-height:110px;
+                    ">
+                        <div style="color:{color}; font-size:14px; margin-bottom:8px;">
+                            {title}
+                        </div>
+                        <div style="color:white; font-size:26px; font-weight:600;">
+                            {value}
+                        </div>
                     </div>
-                    <div style="color:white; font-size:26px; font-weight:600;">
-                        {value}
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-
-
-            # =====================================
-            # 5. KPI (SYNTHÈSE FINALE)
-            # =====================================
-            c1, c2, c3, c4 = st.columns(4)
-
-            with c1:
-                kpi("📦 Annonces", len(df_dash))
-
-            with c2:
-                kpi(
-                    "💰 Prix moyen",
-                    f"{int(df_dash['Prix_Numeric'].mean()):,} FCFA".replace(",", " ")
+                    """,
+                    unsafe_allow_html=True
                 )
 
-            with c3:
-                kpi(
-                    "📊 Prix médian",
-                    f"{int(df_dash['Prix_Numeric'].median()):,} FCFA".replace(",", " ")
+
+                # =====================================
+                # 5. KPI (SYNTHÈSE FINALE)
+                # =====================================
+                c1, c2, c3, c4 = st.columns(4)
+
+                with c1:
+                    kpi("📦 Annonces", len(df_dash))
+
+                with c2:
+                    kpi(
+                        "💰 Prix moyen",
+                        f"{int(df_dash['Prix_Numeric'].mean()):,} FCFA".replace(",", " ")
+                    )
+
+                with c3:
+                    kpi(
+                        "📊 Prix médian",
+                        f"{int(df_dash['Prix_Numeric'].median()):,} FCFA".replace(",", " ")
+                    )
+
+                with c4:
+                    kpi(
+                        "⬆️ Prix max",
+                        f"{int(df_dash['Prix_Numeric'].max()):,} FCFA".replace(",", " ")
                 )
 
-            with c4:
-                kpi(
-                    "⬆️ Prix max",
-                    f"{int(df_dash['Prix_Numeric'].max()):,} FCFA".replace(",", " ")
-                )
-
-            # =====================================
-            # 6. DONNÉES UTILISÉES
-            # =====================================
-            with st.expander("📄 Voir les données nettoyées utilisées pour le dashboard"):
-                show_df_info(df_dash)
-                st.dataframe(df_dash, use_container_width=True)
+                # =====================================
+                # 6. DONNÉES UTILISÉES
+                # =====================================
+                with st.expander("📄 Voir les données nettoyées utilisées pour le dashboard"):
+                    show_df_info(df_dash)
+                    st.dataframe(df_dash, use_container_width=True)
 
 
            
@@ -323,4 +323,5 @@ elif page == "📝 Évaluer l'app":
         st.markdown("[👉 Formulaire Kobo](https://ee.kobotoolbox.org/x/irBDbBex)")
     with c2:
         st.markdown("[👉 Google Forms](https://docs.google.com/forms/d/e/1FAIpQLScbB-zm6Wo8P3rmQO3PC4jjCFPd_Gt4-tBQ7_n-Nl1XAEiJbw/viewform?usp=header)")
+
 
