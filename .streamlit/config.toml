@@ -1,7 +1,10 @@
 [theme]
 base = "dark"
-primaryColor = "#7B61FF"
-backgroundColor = "#0E1117"
-secondaryBackgroundColor = "#161B22"
-textColor = "#E6EDF3"
+
+primaryColor = "#00D4FF"            # bleu cyan (boutons, sliders, accents)
+backgroundColor = "#0B0F14"         # fond principal très sombre
+secondaryBackgroundColor = "#131A23" # cartes, sidebar, blocs
+textColor = "#E6EDF3"               # texte clair, lisible
+
 font = "sans serif"
+
