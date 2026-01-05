@@ -131,9 +131,9 @@ nb_pages = st.sidebar.slider(
 # ACCUEIL
 # ==================================================
 if page == "🏠 Accueil":
-    st.title("🐾 CoinAfrique – Application de Data Scraping")
+    st.title("🐾 CoinAfrique – Application de Collecte de données")
     st.markdown("""
-    Cette application permet :
+    Cette application permet de:
     - consulter les données scrapées via BeautifulSoup et WebScraper
     - télécharger les données brutes issues de WebScraper
     - analyser les données nettoyées via un dashboard interactif
