@@ -17,32 +17,6 @@ h1, h2, h3 { color: #7b61ff; }
 
 
 # ==================================================
-# KPI CARD
-# ==================================================
-def kpi(title, value, color="#00d4ff"):
-    st.markdown(
-        f"""
-        <div style="
-            background-color:#0e1117;
-            padding:20px;
-            border-radius:14px;
-            border:1px solid #262730;
-            text-align:center;
-            min-height:110px;
-        ">
-            <div style="color:{color}; font-size:14px; margin-bottom:8px;">
-                {title}
-            </div>
-            <div style="color:white; font-size:26px; font-weight:600;">
-                {value}
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-
-# ==================================================
 # CONSTANTES
 # ==================================================
 MAX_PAGES_BY_CATEGORY = {
@@ -133,7 +107,7 @@ if page == "🏠 Accueil":
     st.title("🐾 CoinAfrique – Application de Data Scraping")
     st.markdown("""
     Cette application permet :
-    - consulter les données scrapées
+    - consulter les données scrapées via BeautifulSoup et WebScraper
     - télécharger les données brutes issues de WebScraper
     - analyser les données nettoyées via un dashboard interactif
     """)
@@ -276,6 +250,32 @@ elif page == "📊 Dashboard (WebScraper nettoyé)":
 
             st.divider()
 
+        # ==================================================
+        # KPI CARD
+        # ==================================================
+        def kpi(title, value, color="#00d4ff"):
+            st.markdown(
+                f"""
+                <div style="
+                    background-color:#0e1117;
+                    padding:20px;
+                    border-radius:14px;
+                    border:1px solid #262730;
+                    text-align:center;
+                    min-height:110px;
+                ">
+                    <div style="color:{color}; font-size:14px; margin-bottom:8px;">
+                        {title}
+                    </div>
+                    <div style="color:white; font-size:26px; font-weight:600;">
+                        {value}
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+
             # =====================================
             # 5. KPI (SYNTHÈSE FINALE)
             # =====================================
@@ -323,3 +323,4 @@ elif page == "📝 Évaluer l'app":
         st.markdown("[👉 Formulaire Kobo](https://ee.kobotoolbox.org/x/irBDbBex)")
     with c2:
         st.markdown("[👉 Google Forms](https://docs.google.com/forms/d/e/1FAIpQLScbB-zm6Wo8P3rmQO3PC4jjCFPd_Gt4-tBQ7_n-Nl1XAEiJbw/viewform?usp=header)")
+
