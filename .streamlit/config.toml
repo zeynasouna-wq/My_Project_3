@@ -1,7 +1,10 @@
 [theme]
 base = "light"
-primaryColor = "#7B61FF"
-backgroundColor = "#F8FAFC"
-secondaryBackgroundColor = "#EEF2FF"
-textColor = "#0F172A"
+
+primaryColor = "#22D3EE"               # cyan (boutons, sliders, accents)
+backgroundColor = "#FFF1F5"            # rose très clair (fond principal)
+secondaryBackgroundColor = "#FFE4E6"   # rose pastel (sidebar, cartes)
+textColor = "#0F172A"                  # texte foncé (lisible)
+
 font = "sans serif"
+
